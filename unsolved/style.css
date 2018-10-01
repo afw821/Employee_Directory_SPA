@@ -1,5 +1,38 @@
 .side-bar{
+    position: absolute;
+    top:0;
+    left:0;
     background-color:black;
     width:20%;
     height:1000px;
+}
+.link-box{
+    position:absolute;
+    left: 150px;
+    top: 200px;
+}
+.link-box2{
+    position:absolute;
+    left:150px;
+    top:250px;
+}
+.link-box3{
+    position:absolute;
+    left:150px;
+    top:300px;
+}
+.link-box4{
+    position:absolute;
+    left:150px;
+    top:350px;
+}
+.link-box5{
+    position:absolute;
+    left:150px;
+    top:400px;
+}
+.link{
+    text-decoration: none;
+    color:white;
+    font-size:20px;
 }
