@@ -5,3 +5,15 @@ const renderList = function(){
     }
 }
 renderList();
+
+const showAdd = function(){
+    $('.input-bar').removeClass('hide');
+    $('.content').removeClass('hide');
+}
+$('.link-box2').on('click', showAdd);
+
+const showVerify = function(){
+    $('.content').addClass('hide');
+    $('.input-bar').addClass('hide');
+}
+$('.link-box3').on('click', showVerify);
