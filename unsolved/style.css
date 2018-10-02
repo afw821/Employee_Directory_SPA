@@ -1,9 +1,7 @@
 .side-bar{
-    position: absolute;
-    top:0;
-    left:0;
+    position: fixed;
     background-color:black;
-    width:20%;
+    width:15%;
     height:1000px;
 }
 .sidebar-img{
@@ -12,58 +10,45 @@
 }
 .link-box{
     position:absolute;
-    left: 150px;
+    left: 100px;
     top: 200px;
+    color: white;
+    font-size: 20px;
 }
 .link-box2{
     position:absolute;
-    left:150px;
+    left:100px;
     top:250px;
+    color: white;
+    font-size: 20px;
 }
 .link-box3{
     position:absolute;
-    left:150px;
+    left:100px;
     top:300px;
+    color: white;
+    font-size: 20px;
 }
 .link-box4{
     position:absolute;
-    left:150px;
+    left:100px;
     top:350px;
+    color: white;
+    font-size: 20px;
 }
 .link-box5{
     position:absolute;
-    left:150px;
+    left:100px;
     top:400px;
+    color: white;
+    font-size: 20px;
 }
-.link{
-    text-decoration: none;
-    color:white;
-    font-size:20px;
-}
-.employee-box{
-    position:absolute;
-    left: 400px;
-    width: 600px;
-    height: 200px;
-    margin-top: 10px;
+.employee{
+    margin-left:400px;
     border: 1px solid gray;
+    margin-bottom: 5px;
+    width: 20%
 }
-.emp-name{
-    position:absolute;
-    left: 20px;
-    top: 20px;
-    font-size: 20px;
-
-}
-.emp-num{
-    position:absolute;
-    top: 60px;
-    left:20px;
-    font-size: 20px;
-}
-.emp-phone{
-    position:absolute;
-    left:20px;
-    top:100px;
-    font-size:20px;
+.content{
+    padding-top:40px;
 }
