@@ -5,8 +5,9 @@
     height:1000px;
 }
 .sidebar-img{
-    position:absolute;
-
+    position: absolute;
+    left: 80px;
+    top: 70px;
 }
 .link-box{
     position:absolute;
@@ -75,9 +76,7 @@
     position: absolute;
     width:300px;
 }
-i{
-    size:20px;
-}
 .hide{
     display:none;
 }
+
