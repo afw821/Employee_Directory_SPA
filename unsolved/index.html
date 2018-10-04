@@ -6,22 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="reset.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
-  
-      <title>Employee Directory</title>
+
+  <title>Employee Directory</title>
 </head>
 
 <body>
 
   <div class="side-bar">
-    <div class = "sidebar-img">
-      <img src = "data:image/png;base64,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" alt = "address-book" width = "100px" height = "100px">
+    <div class="sidebar-img">
+      <img src="http://i67.tinypic.com/244a7ex.png alt" alt="address-book" width="100px" height="100px">
     </div>
-   
-    
-   
-    
     <div class="link-box">
       VIEW
     </div>
@@ -38,15 +33,19 @@
       DELETE
     </div>
   </div>
-  <div class = "input-bar hide">
-  <input class="fname name-add" name="fname" placeholder = "name">
-  <input class="fname2 name-add" name="fname" placeholder = "office number">
-  <input class="fname3 name-add" name="fname" placeholder = "phone number">
+  <div class="input-bar hide">
+    <input class="fname name-add" name="fname" placeholder="name">
+    <input class="fname2 name-add" name="fname" placeholder="office number">
+    <input class="fname3 name-add" name="fname" placeholder="phone number">
+    <button class = "fname4" type="button">Add</button>
   </div>
-  <div class = 'verify-input-bar hide'>
-    <input class = "fname3" name = "fname" placeholder = "name">
+  <div class='verify-input-bar hide'>
+    <input class="fname3 fname5" name="fname" placeholder=" enter name to search">
+    <button class = "fname6" type="button">Search</button>
   </div>
   <div class="content"></div>
+  <div class = "yes hide">Yes!!!!</div>
+  <div class = "no hide">Name doesn't match, please try again</div>
 
 
   <script src="dom.js"></script>
