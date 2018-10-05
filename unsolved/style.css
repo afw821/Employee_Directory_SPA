@@ -85,8 +85,12 @@
 .fname6{
     margin-top:10px;
     left: 1600px;
+    position: absolute;    
+}
+.delete{
+    margin-top:10px;
+    left: 1665px;
     position: absolute;
-    
 }
 .yes{
     color: black;
