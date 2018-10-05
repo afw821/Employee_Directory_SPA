@@ -1,17 +1,15 @@
+//1. A View option that displays all employee info:
 const renderList = function () {
     $('.content').empty();
     for (let i = 0; i < employeeList.length; i++) {
-        $('.content').append(`<div class = 'employee'> ${employeeList[i].name} <br/><br/>${employeeList[i].officeNum} <br/><br/> ${employeeList[i].phoneNum} </div>`);
+        $('.content').append(`<div class = 'employee'> ${employeeList[i].name} <br/><br/>
+        ${employeeList[i].officeNum} <br/><br/> ${employeeList[i].phoneNum} </div>`);
 
     }
 }
 renderList();
 
-
-
-
-
-
+//This is the view when the page first loads
 const viewStart = function () {
     $('.content').removeClass('hide');
     $('.input-bar').addClass('hide');
@@ -21,6 +19,7 @@ const viewStart = function () {
 }
 $('.link-box').on('click', viewStart);
 
+//When the add button is clicked, the input bars appear
 const showAdd = function () {
     $('.input-bar').removeClass('hide');
     $('.content').removeClass('hide');
@@ -31,6 +30,7 @@ const showAdd = function () {
 }
 $('.link-box2').on('click', showAdd);
 
+//When the verify button is clicked, the verify name input bar appears
 const showVerify = function () {
     $('.content').addClass('hide');
     $('.input-bar').addClass('hide');
@@ -40,6 +40,7 @@ const showVerify = function () {
 }
 $('.link-box3').on('click', showVerify);
 
+//2. An Add option that allows users to input name, office number, and phone number and then renders the updated employee list. 
 const nameAdd = function () {
     const nameVal = $('.fname').val();
     const officeVal = $('.fname2').val();
@@ -53,6 +54,7 @@ const nameAdd = function () {
 }
 $('.fname4').on('click', nameAdd);
 
+//3. A Verify option that allows users to input a name and renders `yes` if the employee exists and `no` otherwise.
 const nameSearch = function(){
     const nameVar = $('.fname5').val();
 for( let i = 0; i < employeeList.length; i++){
@@ -73,4 +75,23 @@ for( let i = 0; i < employeeList.length; i++){
 
 $('.fname6').on('click', nameSearch);
 
+/*4. An Update option that allows the user to input name, office number,
+ and phone number and updates the office number and phone number of the 
+ employee that matches the input name, and then renders the updated employee list.*/
+ 
+const updateInfo = function(){
+    const nameVar2 = $('.fname').val();
+    const officeVar = $('.fname2').val();
+    const phoneVar = $('.fname3').val();
+for( let i = 0; i < employeeList.length; i++){
+    if(nameVar2 == employeeList[i].name){
+        $('.employee').append(officeVar);
+        $('.employee').append(phoneVar);   
+    }else{   
+        console.log('no');
+    }
+}
+
+}
+$('.link-box4').on('click', updateInfo );
 
