@@ -10,37 +10,48 @@ const renderList = function () {
 renderList();
 
 //This is the view when the page first loads
+//you can re-navigate to this page by hitting the view icon on the sidebar
 const viewStart = function () {
     $('.content').removeClass('hide');
     $('.input-bar').addClass('hide');
     $('.verify-input-bar').addClass('hide');
     $('.no').addClass('hide');
     $('.yes').addClass('hide');
+    $('.delete').addClass('hide');
+    $('.update').addClass('hide');
 }
 $('.link-box').on('click', viewStart);
 
 //When the add button is clicked, the input bars appear
+//from this page you can add users
 const showAdd = function () {
     $('.input-bar').removeClass('hide');
     $('.content').removeClass('hide');
     $('.verify-input-bar').addClass('hide');
     $('.no').addClass('hide');
     $('.yes').addClass('hide');
+    $('.delete').addClass('hide');
+    $('.update').addClass('hide');
+    $('.fname4').removeClass('hide');
 
 }
 $('.link-box2').on('click', showAdd);
 
 //When the verify button is clicked, the verify name input bar appears
+//from this page you can enter an employee name and find out if they are on the list
 const showVerify = function () {
     $('.content').addClass('hide');
     $('.input-bar').addClass('hide');
     $('.verify-input-bar').removeClass('hide');
     $('.no').addClass('hide');
     $('.yes').addClass('hide');
+    $('.delete').addClass('hide');
+    $('.update').addClass('hide');
 }
 $('.link-box3').on('click', showVerify);
 
-// This is the page displayed when update is clicked
+/* This is the page displayed when update is clicked
+you can update the office number and phone number of existing employees*/
 
 const showUpdate = function () {
     $('.content').removeClass('hide');
@@ -49,9 +60,26 @@ const showUpdate = function () {
     $('.no').addClass('hide');
     $('.yes').addClass('hide');
     $('.fname4').addClass('hide');
+    $('.delete').addClass('hide');
+    $('.update').removeClass('hide');
 }
 $('.link-box4').on('click', showUpdate);
-//2. An Add option that allows users to input name, office number, and phone number and then renders the updated employee list. 
+
+/*this page will show up when the delete icon is clicked on the sidebar
+from this page you can delete people from the directory*/
+const showDelete = function(){
+    $('.content').removeClass('hide');
+    $('.input-bar').removeClass('hide');
+    $('.fname4').addClass('hide');
+    $('.delete').removeClass("hide");
+    $('.no').addClass('hide');
+    $('.yes').addClass('hide');
+    $('.verify-input-bar').addClass('hide');
+    $('.update').addClass('hide');
+}
+$('.link-box5').on('click', showDelete);
+/*2. An Add option that allows users to input name, office number,
+and phone number and then renders the updated employee list.*/  
 const nameAdd = function () {
     const nameVal = $('.fname').val();
     const officeVal = $('.fname2').val();
@@ -104,7 +132,7 @@ const updateInfo = function () {
     }
 
 }
-$('.link-box4').on('click', updateInfo);
+$('.update').on('click', updateInfo);
 
 //5. A Delete option that deletes the employee with the matching name nd then renders the updated employee list. 
 
@@ -121,4 +149,5 @@ const deleteInfo = function () {
 
     }
 }
-$('.link-box5').on('click', deleteInfo);
+$('.delete').on('click',deleteInfo)
+
