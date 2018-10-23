@@ -97,14 +97,15 @@ $('.fname4').on('click', nameAdd);
 const nameSearch = function () {
     const nameVar = $('.fname5').val();
     for (let i = 0; i < employeeList.length; i++) {
+        console.log('Yes');
         if (nameVar == employeeList[i].name) {
             $('.yes').removeClass('hide');
             $('.no').addClass('hide');
-            return "yes";
+            return;
         } else {
+            console.log('hello')
             $('.no').removeClass('hide');
             $('.yes').addClass('hide');
-            return "no";
         }
     }
 }
