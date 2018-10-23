@@ -4,7 +4,6 @@ const renderList = function () {
     for (let i = 0; i < employeeList.length; i++) {
         $('.content').append(`<div class = 'employee'> ${employeeList[i].name} <br/><br/>
         ${employeeList[i].officeNum} <br/><br/>${employeeList[i].phoneNum}</div>`);
-
     }
 }
 renderList();
@@ -97,13 +96,11 @@ $('.fname4').on('click', nameAdd);
 const nameSearch = function () {
     const nameVar = $('.fname5').val();
     for (let i = 0; i < employeeList.length; i++) {
-        console.log('Yes');
         if (nameVar == employeeList[i].name) {
             $('.yes').removeClass('hide');
             $('.no').addClass('hide');
             return;
         } else {
-            console.log('hello')
             $('.no').removeClass('hide');
             $('.yes').addClass('hide');
         }
@@ -122,16 +119,12 @@ const updateInfo = function () {
     const phoneVar = $('.fname3').val();
     for (let i = 0; i < employeeList.length; i++) {
         if (nameVar2 === employeeList[i].name) {
-            console.log('yes');
             employeeList[i].officeNum = officeVar;
             employeeList[i].phoneNum = phoneVar;
             renderList();
             return;
-        } else {
-            console.log('no');
-        }
+        }    
     }
-
 }
 $('.update').on('click', updateInfo);
 
@@ -144,10 +137,7 @@ const deleteInfo = function () {
             employeeList.splice(i, 1);
             renderList();
             return;
-        } else {
-            console.log('no');
         }
-
     }
 }
 $('.delete').on('click',deleteInfo)
