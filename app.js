@@ -1,12 +1,13 @@
 //1. A View option that displays all employee info:
 const renderList = function () {
-    $('.content').empty();
-    for (let i = 0; i < employeeList.length; i++) {
+    $('.content').empty(); //empties content div prior to appending employee list
+    for (let i = 0; i < employeeList.length; i++) { 
         $('.content').append(`<div class = 'employee'> ${employeeList[i].name} <br/><br/>
         ${employeeList[i].officeNum} <br/><br/>${employeeList[i].phoneNum}</div>`);
+        //loops through employee.js list and appends it to the page
     }
 }
-renderList();
+renderList(); //immediately calls the renderList function displaying employees on page
 
 //This is the view when the page first loads
 //you can re-navigate to this page by hitting the view icon on the sidebar
@@ -19,7 +20,7 @@ const viewStart = function () {
     $('.delete').addClass('hide');
     $('.update').addClass('hide');
 }
-$('.link-box').on('click', viewStart);
+$('.link-box').on('click', viewStart); //on click eventlistener triggers this function
 
 //When the add button is clicked, the input bars appear
 //from this page you can add users
@@ -34,7 +35,7 @@ const showAdd = function () {
     $('.fname4').removeClass('hide');
 
 }
-$('.link-box2').on('click', showAdd);
+$('.link-box2').on('click', showAdd); //on click eventlistener
 
 //When the verify button is clicked, the verify name input bar appears
 //from this page you can enter an employee name and find out if they are on the list
@@ -83,31 +84,31 @@ const nameAdd = function () {
     const nameVal = $('.fname').val();
     const officeVal = $('.fname2').val();
     const phoneVal = $('.fname3').val();
-    employeeList.push({
+    employeeList.push({    //pushes above captured values to the employeelist array of objects
         name: nameVal,
         officeNum: officeVal,
         phoneNum: phoneVal
     });
-    renderList();
+    renderList(); //function call to render the employee list
 }
 $('.fname4').on('click', nameAdd);
 
 //3. A Verify option that allows users to input a name and renders `yes` if the employee exists and `no` otherwise.
 const nameSearch = function () {
-    const nameVar = $('.fname5').val();
-    for (let i = 0; i < employeeList.length; i++) {
-        if (nameVar == employeeList[i].name) {
+    const nameVar = $('.fname5').val();  //value of input stored in a constant
+    for (let i = 0; i < employeeList.length; i++) {  //loops through array
+        if (nameVar == employeeList[i].name) { //if input value matches an employee name
             $('.yes').removeClass('hide');
             $('.no').addClass('hide');
-            return;
+            return; //return yes by removing class of hide on yes
         } else {
-            $('.no').removeClass('hide');
+            $('.no').removeClass('hide'); //else remove class of hide on "no, please try again"
             $('.yes').addClass('hide');
         }
     }
 }
 
-$('.fname6').on('click', nameSearch);
+$('.fname6').on('click', nameSearch); //on click event executes nameSearch function
 
 /*4. An Update option that allows the user to input name, office number,
  and phone number and updates the office number and phone number of the 
@@ -134,7 +135,7 @@ const deleteInfo = function () {
     const nameVar3 = $('.fname').val();
     for (let i = 0; i < employeeList.length; i++) {
         if (nameVar3 === employeeList[i].name) {
-            employeeList.splice(i, 1);
+            employeeList.splice(i, 1); //splice method employee list
             renderList();
             return;
         }
